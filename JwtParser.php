@@ -98,7 +98,7 @@ class JwtParser{
   }
 
 
-	/**
+  /**
    * RSA 暗号で使われる「Modulus」と「Exponent」との値を受け取り、PEMフォーマットの文字列を生成する。
    * 「phpseclib」のライブラリが必須。 : http://phpseclib.sourceforge.net/index.html
    * 引数のふたつはAzure（やGoogleやYahoo）の公開鍵配布エンドポイント（ https://login.microsoftonline.com/XXXXX......./discovery/v2.0/keys?p=該当のポリシー名 ）
