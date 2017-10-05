@@ -4,7 +4,7 @@
 PHP Version 5.6.30 で動作確認済み
 
 ## 必須ライブラリ
-* <a href="http://phpseclib.sourceforge.net/" target="_blank">phpseclib]</a>
+* <a href="http://phpseclib.sourceforge.net/" target="_blank">phpseclib</a>
 
 ### ライブラリ設置方法
 ダウンロードした phpseclib を解凍し、以下のように設置してください。
