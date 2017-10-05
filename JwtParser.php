@@ -110,18 +110,18 @@ class JwtParser{
    */
   public static function generatePemFormatStringFromModulusAndExponent($modulus, $exponent){
     //公開鍵配布のAPIから受け取った値をURL対応Base64デコードしてバイナリデータを取得する
-    $bin_modulus  = self::urlSafeBase64Decode($modulus);
     $bin_exponent = self::urlSafeBase64Decode($exponent);
+    $bin_modulus  = self::urlSafeBase64Decode($modulus);
 
     //バイナリデータをOS2IPという規格に従って整数に変換する。ここではMath_Bigintegerというオブジェクトにしている。
-    $int_modulus  = self::os2ip($bin_modulus);
-    $int_exponent = self::os2ip($bin_exponent);
+    $obj_exponent = self::convertBinaryToBigIntegerObj($bin_exponent);
+    $obj_modulus  = self::convertBinaryToBigIntegerObj($bin_modulus);
 
     $rsa = new Crypt_RSA();
     $rsa->loadKey(
       [
-        'e' => self::convertBinaryToBigIntegerObj($bin_exponent),
-        'n' => self::convertBinaryToBigIntegerObj($bin_modulus)
+        'e' => $obj_exponent,
+        'n' => $obj_modulus
       ]
     );
     return $rsa->getPublicKey();
