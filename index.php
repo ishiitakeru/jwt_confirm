@@ -21,6 +21,7 @@ if((empty($_REQUEST['mode']) == false)&&($_REQUEST['mode'] == 'en')){
 
 <html>
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
 <title>WebAPIテスト</title>
 <style>
 input[type="text"]{
